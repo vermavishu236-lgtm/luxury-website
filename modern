@@ -1,0 +1,79 @@
+export default function ModernElegance() {
+  return (
+    <main className="min-h-screen bg-black text-white font-sans">
+      {/* Header */}
+      <header className="bg-black text-gold p-6 shadow-lg flex justify-between items-center">
+        <h1 className="text-3xl font-bold">Modern Elegance</h1>
+        <p className="italic text-lg">Timeless Luxury, Redefined</p>
+      </header>
+
+      {/* Hero Section */}
+      <section className="flex flex-col md:flex-row items-center justify-center text-center md:text-left py-16 px-8 bg-black text-white">
+        <div className="max-w-xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gold">Gen-Z Meets Old Money</h2>
+          <p className="mb-6 text-lg">
+            Discover clothing that blends modern luxury with timeless elegance. Designed for Gen-Zs, upper class, and the aspiring middle class.
+          </p>
+          <button className="bg-gold text-black px-6 py-2 rounded-xl shadow hover:bg-yellow-500">Explore Collection</button>
+        </div>
+      </section>
+
+      {/* Collection Preview */}
+      <section className="bg-black py-16 px-8">
+        <h3 className="text-3xl font-semibold text-center text-gold mb-10">Featured Collection</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[1, 2, 3].map((item) => (
+            <div key={item} className="bg-white text-black p-4 rounded-2xl shadow-xl">
+              <div className="h-64 bg-gray-300 rounded-xl mb-4"></div>
+              <h4 className="text-xl font-bold mb-2">Product Name</h4>
+              <p className="text-sm mb-2">Short description of luxury item</p>
+              <button className="bg-black text-gold px-4 py-2 rounded-xl hover:bg-gray-900">Add to Cart</button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-8 bg-gradient-to-b from-black to-gray-900 text-white">
+        <h3 className="text-3xl font-bold text-center text-gold mb-6">About Us</h3>
+        <p className="max-w-4xl mx-auto text-center text-lg">
+          Modern Elegance is more than a clothing brand — it’s a lifestyle. With a blend of Gen-Z edge and old-money grace, our designs empower you to express timeless class in a modern world.
+        </p>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-8 bg-black text-white">
+        <h3 className="text-3xl font-bold text-center text-gold mb-6">Get in Touch</h3>
+        <form className="max-w-xl mx-auto space-y-4">
+          <input type="text" placeholder="Your Name" className="w-full p-3 rounded-xl text-black" />
+          <input type="email" placeholder="Your Email" className="w-full p-3 rounded-xl text-black" />
+          <textarea placeholder="Your Message" rows="4" className="w-full p-3 rounded-xl text-black"></textarea>
+          <button className="bg-gold text-black px-6 py-2 rounded-xl hover:bg-yellow-500">Send Message</button>
+        </form>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-gold py-6 text-center">
+        <p>&copy; {new Date().getFullYear()} Modern Elegance. All rights reserved.</p>
+        <div className="flex justify-center gap-6 mt-2">
+          <a href="#" className="hover:underline">Home</a>
+          <a href="#" className="hover:underline">Collection</a>
+          <a href="#" className="hover:underline">Cart</a>
+          <a href="#" className="hover:underline">Help</a>
+        </div>
+      </footer>
+    </main>
+  );
+}
+
+const gold = '#D4AF37';
+const styles = `
+  .text-gold { color: ${gold}; }
+  .bg-gold { background-color: ${gold}; }
+`;
+
+if (typeof document !== 'undefined') {
+  const styleTag = document.createElement('style');
+  styleTag.innerHTML = styles;
+  document.head.appendChild(styleTag);
+}
